@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scorekeeper : MonoBehaviour
 {
     public int pickupPoints;
-    private int score = 0;
+    private static int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Scorekeeper : MonoBehaviour
         
     }
 
-    public int GetScore()
+    public static int GetScore()
     {
         return score;
     }
