@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scorekeeper : MonoBehaviour
+public class Coin : MonoBehaviour
 {
-    public static int pickupPoints;
-    private static int score = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +16,10 @@ public class Scorekeeper : MonoBehaviour
         
     }
 
-    public static int GetScore()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        return score;
+        Scorekeeper.AddScore();
+        Destroy(this.gameObject);
     }
 
-    public static void AddScore()
-    {
-        score += pickupPoints;
-    }
 }
